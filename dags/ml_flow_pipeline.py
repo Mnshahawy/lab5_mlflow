@@ -5,7 +5,7 @@ from airflow.operators.python import PythonOperator
 from airflow.exceptions import AirflowException
 import sys, subprocess, pathlib, shlex
 
-REPO_ROOT = pathlib.Path(__file__).resolve().parents[1]
+REPO_ROOT = str(pathlib.Path(__file__).resolve().parents[1])
 ENV_VARS = {
     "MLFLOW_TRACKING_URI": "http://127.0.0.1:5000",
     "MLFLOW_EXPERIMENT_NAME": "iris_model_exp",

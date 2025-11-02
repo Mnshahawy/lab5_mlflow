@@ -35,6 +35,7 @@ def main():
 
     C = 1.0
     max_iter = 200
+    run_id = None
 
     with mlflow.start_run(run_name=MLFLOW_RUN_NAME):
         mlflow.log_param("C", C)
@@ -53,7 +54,8 @@ def main():
         # Get the run_id
         run_id = mlflow.active_run().info.run_id
         logging.info(f"MLflow Run ID: {run_id}")
-        
+    
+    if run_id:
         # Print the run_id as JSON to stdout so Airflow can capture it.
         print(json.dumps({"run_id": run_id}))
 
