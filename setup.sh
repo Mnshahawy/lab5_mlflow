@@ -5,13 +5,13 @@ set -euo pipefail
 AIRFLOW_VERSION="2.10.2"
 
 # Detect python version (major.minor)
-PY_VER=$(python3 -c 'import sys;print(f"{sys.version_info[0]}.{sys.version_info[1]}")')
+PY_VER=$(python3.11 -c 'import sys;print(f"{sys.version_info[0]}.{sys.version_info[1]}")')
 
 # Airflow constraints pin
 CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PY_VER}.txt"
 
 # Create venv
-python3 -m venv venv
+python3.11 -m venv venv
 source venv/bin/activate
 
 pip install --upgrade pip wheel setuptools
