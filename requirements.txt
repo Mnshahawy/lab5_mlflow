@@ -15,3 +15,6 @@ pydantic>=2.6,<3
 # Optional: for local testing / browser calls
 aiofiles>=23.0
 starlette>=0.38
+
+# For using s3 bucket
+boto3>=1.40.63
