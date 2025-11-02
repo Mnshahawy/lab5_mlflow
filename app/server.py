@@ -214,7 +214,7 @@ def predict(req: PredictRequest) -> PredictResponse:
         )
 
 # GET for model details
-@app.get("/model_details", tags=["model_details"])
+@app.get("/model", tags=["model"])
 def get_model_details() -> dict:
     """
     Get the details of the currently serving model.
@@ -222,7 +222,7 @@ def get_model_details() -> dict:
     return app_state["current_model_details"]
 
 # POST for switching the model
-@app.post("/switch_model", tags=["switch_model"])
+@app.post("/model", tags=["model"])
 def switch_model(req: SwitchModelRequest) -> dict:
     """
     Switch the model to a new version.
